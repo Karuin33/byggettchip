@@ -38,6 +38,7 @@ module tb ();
       .knapp_comb  (knapp_comb),    // Dedicated inputs
       .correct_out (correct_out),
       .count_out (count_out),   // Dedicated outputs
+      .ena    (ena),      // enable - goes high when design is selected
       .clk    (clk),      // clock
       .rst_n  (rst_n)     // not reset
   );
