@@ -9,12 +9,12 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-This is how it works.
+The game starts by setting inputs knapp_comb to "11" which starts the high frequency clock that "randomizes" a 6 bit sequens of 0 and 1. The user then use combinations of knapp_comb to recreate the high/low sequence. If all is correct the output correct_out is set to '1'.
 
 ## How to test
 
-This is how to test.
+Check how the guess and counter values changes for each clock cycle. 
 
 ## External hardware
 
-This is the external hardware.
+Suggestions: 2 buttons or switches for knapp_comb, and a row of diodes to simulate correct guess and a randomized pattern. 
