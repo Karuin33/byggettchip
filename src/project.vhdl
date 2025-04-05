@@ -4,12 +4,12 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity tt_um_simon_says_karuin33 is
     port (
-        knapp_comb   : in  std_logic_vector(1 downto 0);
-        correct_out  : out std_logic;
-        count_out    : out std_logic_vector(5 downto 0);
-        --uio_in  : in  std_logic_vector(7 downto 0);
-        --uio_out : out std_logic_vector(7 downto 0);
-        --uio_oe  : out std_logic_vector(7 downto 0);
+        --count_out    : out std_logic_vector(5 downto 0);
+        ui_in   : in  std_logic_vector(7 downto 0);
+        uo_out  : out std_logic_vector(7 downto 0);
+        uio_in  : in  std_logic_vector(7 downto 0);
+        uio_out : out std_logic_vector(7 downto 0);
+        uio_oe  : out std_logic_vector(7 downto 0);
         ena     : in  std_logic;
         clk     : in  std_logic;
         rst_n   : in  std_logic
@@ -23,9 +23,15 @@ architecture Behavioral of tt_um_simon_says_karuin33 is
     signal guess : std_logic_vector (5 downto 0);
     signal guess_sync, guess_sync_old, guess_ep : std_logic_vector (1 downto 0);
     signal guess_enable : std_logic;
-    
-
+    signal knapp_comb   : std_logic_vector(1 downto 0);
+    signal correct_out : std_logic;
+    signal count_out    : std_logic_vector(5 downto 0);
 begin
+    knapp_comb <= ui_in(1 downto 0);
+    uo_out(0) <= correct_out;
+    uo_out(6 downto 1) <= count_out;
+
+
     process(clk) begin
         if rising_edge(clk) then
         guess_sync <= knapp_comb;
