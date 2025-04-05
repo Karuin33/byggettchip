@@ -16,6 +16,7 @@ module tb ();
   // Wire up the inputs and outputs:
   reg clk;
   reg rst_n;
+  reg ena;
   reg [1:0] knapp_comb;
   wire correct_out;
   wire [5:0] count_out;
