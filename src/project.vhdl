@@ -63,7 +63,7 @@ begin
                     count_out <= (others => '0');
                 else
                     timer <= timer + 1;
-                    count_out <= count;
+                    count_out <= std_logic_vector(count);
                 end if;
             end if;
             --Shift process 
